@@ -14,7 +14,6 @@ BiocManager::install("DESeq2")
 getwd()
 setwd("E:/BioMac_Lab_2nd_training/scripts")
 
-
 # Load the count data (gene expression counts for each sample)
 cnt <- read.csv("E:/BioMac_Lab_2nd_training/Archive/data/counts.csv")
 str(cnt) # Check the structure of the count data
@@ -172,12 +171,7 @@ Heatmap(mat.z, cluster_rows = TRUE, cluster_columns = TRUE, column_labels = coln
 
 
 
-
-
-
-
-
-# Install necessary packages for gene set enrichment analysis and visualization (run only once)
+# Install necessary packages for gene set enrichment analysis and visualization (run only once for the first time)
 # BiocManager::install("clusterProfiler", version = "3.19")
 # BiocManager::install("pathview")
 # BiocManager::install("enrichplot")
@@ -252,3 +246,4 @@ gseaplot(gse, by = "all", title = gse$Description[1], geneSetID = 1)
 # 'terms' specifies which terms to plot, and '2010:2018' specifies the range of years
 terms <- gse$Description[1:3]
 pmcplot(terms, 2010:2018, proportion = FALSE)
+
